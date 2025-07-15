@@ -1,0 +1,112 @@
+/* Custom CSS styles */
+:where([class^="ri-"])::before { 
+    content: "\f3c2"; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+.hero-bg { 
+    background-image: url('https://readdy.ai/api/search-image?query=Professional%20modern%20workspace%20with%20laptop%20and%20creative%20tools%2C%20minimalist%20desk%20setup%20with%20soft%20lighting%2C%20clean%20contemporary%20office%20environment%2C%20neutral%20tones%20and%20sophisticated%20atmosphere%2C%20high-end%20business%20photography%20style&width=1920&height=1080&seq=hero-bg&orientation=landscape'); 
+}
+
+/* Existing Animated Text */
+.animated-text { 
+    animation: fadeInUp 2s ease-in-out infinite alternate; 
+}
+
+@keyframes fadeInUp { 
+    0% { 
+        opacity: 0.7; 
+        transform: translateY(10px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+}
+
+/* New Hero Section Entrance Animation */
+.animate-hero-fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFadeInUp 1s ease-out forwards;
+}
+
+.animate-hero-fade-in-up.delay-200 {
+    animation-delay: 0.2s;
+}
+
+@keyframes heroFadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Existing Service Card Hover */
+.service-card:hover { 
+    transform: translateY(-10px); 
+    transition: all 0.3s ease; 
+}
+
+/* New Service Card Icon Rotation on Card Hover */
+.service-card:hover .service-icon-container i {
+    transform: rotate(10deg);
+    transition: transform 0.3s ease;
+}
+
+/* Existing Portfolio Overlay */
+.portfolio-item:hover .portfolio-overlay { 
+    opacity: 1; 
+}
+
+.portfolio-overlay { 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+/* Existing Scroll Indicator */
+.scroll-indicator { 
+    animation: bounce 2s infinite; 
+}
+
+@keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateY(0); 
+    } 
+    40% { 
+        transform: translateY(-10px); 
+    } 
+    60% { 
+        transform: translateY(-5px); 
+    } 
+}
+
+/* New Global Social Icon Hover Effect */
+.social-icon-hover {
+    transition: transform 0.3s ease;
+}
+
+.social-icon-hover:hover {
+    transform: scale(1.1);
+}
+
+/* New Contact Info Icon Hover Effect */
+.contact-info-hover {
+    transition: transform 0.3s ease; /* For the entire block */
+}
+
+.contact-info-hover:hover .w-12.h-12 i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* New Input Field Focus Effect */
+.focus-input-effect:focus {
+    border-color: #3B82F6; /* Primary color */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Soft shadow with primary color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
