@@ -5,26 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmudul - Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#3B82F6',secondary:'#1F2937'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#EB671A', // Your new primary branding color
+                        secondary: '#1F2937',
+                        gradientEnd: '#E42C1F' // Your second branding color for gradient
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
 <body class="bg-white">
 
+<!-- Header -->
 <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <div class="flex-shrink-0">
                 <span class="font-['Pacifico'] text-2xl text-primary">logo</span>
             </div>
-            <nav class="hidden md:flex space-x-8">
+            <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
                 <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
-                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-primary transition-colors flex items-center">
+                        Services <i class="ri-arrow-down-s-line ml-1 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg py-2 w-48 mt-2 z-10">
+                        <a href="web-design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Web Design</a>
+                        <a href="ui-ux-design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">UI/UX Design</a>
+                        <a href="branding.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Branding</a>
+                        <a href="graphic-design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Graphic Design</a>
+                    </div>
+                </div>
+
                 <a href="#portfolio" class="text-gray-700 hover:text-primary transition-colors">Portfolio</a>
-                <a href="#blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
                 <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
             </nav>
             <button class="md:hidden w-8 h-8 flex items-center justify-center" id="mobile-menu-btn">
@@ -36,14 +74,17 @@
         <div class="px-4 py-2 space-y-2">
             <a href="#home" class="block py-2 text-gray-700">Home</a>
             <a href="#about" class="block py-2 text-gray-700">About</a>
-            <a href="#services" class="block py-2 text-gray-700">Services</a>
+            <a href="web-design.html" class="block py-2 text-gray-700 pl-4">Web Design</a>
+            <a href="ui-ux-design.html" class="block py-2 text-gray-700 pl-4">UI/UX Design</a>
+            <a href="branding.html" class="block py-2 text-gray-700 pl-4">Branding</a>
+            <a href="graphic-design.html" class="block py-2 text-gray-700 pl-4">Graphic Design</a>
             <a href="#portfolio" class="block py-2 text-gray-700">Portfolio</a>
-            <a href="#blog" class="block py-2 text-gray-700">Blog</a>
             <a href="#contact" class="block py-2 text-gray-700">Contact</a>
         </div>
     </div>
 </header>
 
+<!-- Hero Section -->
 <section id="home" class="relative min-h-screen flex items-center hero-bg bg-cover bg-center">
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     <div class="relative z-10 w-full">
@@ -60,6 +101,7 @@
             </div>
         </div>
         
+        <!-- Social Media Icons -->
         <div class="absolute left-8 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col space-y-4">
             <a href="#" class="social-icon-hover w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-primary transition-colors">
                 <i class="ri-facebook-line text-white"></i>
@@ -75,6 +117,7 @@
             </a>
         </div>
         
+        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
             <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
                 <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
@@ -83,6 +126,7 @@
     </div>
 </section>
 
+<!-- About Section -->
 <section id="about" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -117,7 +161,7 @@
                     </div>
                 </div>
                 
-                <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                <button class="btn-gradient text-white px-8 py-3 !rounded-button whitespace-nowrap">
                     Download CV
                 </button>
                 
@@ -140,18 +184,19 @@
     </div>
 </section>
 
+<!-- Services Section (Optional: You can remove this section if you prefer to direct users to individual service pages) -->
 <section id="services" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">My Services</h2>
             <div class="w-20 h-1 bg-primary mx-auto mb-4"></div>
             <p class="text-gray-600 max-w-2xl mx-auto">
-                I offer a comprehensive range of web development services to help bring your digital vision to life.
+                I offer a comprehensive range of web development services to help bring your digital vision to life. Click on a service to learn more!
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
+            <a href="web-design.html" class="service-card bg-white p-8 rounded-lg shadow-lg border block">
                 <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
                     <i class="ri-code-line text-2xl text-primary"></i>
                 </div>
@@ -159,9 +204,9 @@
                 <p class="text-gray-600">
                     Custom web applications built with modern technologies and best practices for optimal performance.
                 </p>
-            </div>
+            </a>
             
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
+            <a href="ui-ux-design.html" class="service-card bg-white p-8 rounded-lg shadow-lg border block">
                 <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
                     <i class="ri-smartphone-line text-2xl text-primary"></i>
                 </div>
@@ -169,9 +214,9 @@
                 <p class="text-gray-600">
                     Mobile-first approach ensuring your website looks perfect on all devices and screen sizes.
                 </p>
-            </div>
+            </a>
             
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
+            <a href="branding.html" class="service-card bg-white p-8 rounded-lg shadow-lg border block">
                 <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
                     <i class="ri-palette-line text-2xl text-primary"></i>
                 </div>
@@ -179,41 +224,32 @@
                 <p class="text-gray-600">
                     User-centered design solutions that enhance user experience and drive engagement.
                 </p>
-            </div>
+            </a>
             
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
+            <a href="graphic-design.html" class="service-card bg-white p-8 rounded-lg shadow-lg border block">
                 <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
                     <i class="ri-search-eye-line text-2xl text-primary"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">SEO Optimization</h3>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Graphic Design</h3>
                 <p class="text-gray-600">
                     Search engine optimization to improve your website's visibility and organic traffic.
                 </p>
-            </div>
+            </a>
             
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
-                <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
-                    <i class="ri-shopping-cart-line text-2xl text-primary"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">E-commerce</h3>
-                <p class="text-gray-600">
-                    Complete e-commerce solutions with secure payment integration and inventory management.
-                </p>
-            </div>
-            
-            <div class="service-card bg-white p-8 rounded-lg shadow-lg border hover:shadow-xl">
+            <a href="index.html#contact" class="service-card bg-white p-8 rounded-lg shadow-lg border block">
                 <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mb-6 service-icon-container">
                     <i class="ri-tools-line text-2xl text-primary"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Maintenance</h3>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Maintenance & Support</h3>
                 <p class="text-gray-600">
                     Ongoing website maintenance and support to keep your site running smoothly and securely.
                 </p>
-            </div>
+            </a>
         </div>
     </div>
 </section>
 
+<!-- Portfolio Section -->
 <section id="portfolio" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -292,56 +328,7 @@
     </div>
 </section>
 
-<section id="blog" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Latest Blog Posts</h2>
-            <div class="w-20 h-1 bg-primary mx-auto mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Stay updated with the latest trends and insights in web development and design.
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden border hover:shadow-xl transition-shadow">
-                <img src="https://readdy.ai/api/search-image?query=Modern%20web%20development%20workspace%20with%20code%20on%20multiple%20monitors%2C%20developer%20working%20on%20responsive%20design%2C%20contemporary%20programming%20environment%2C%20tech%20blog%20featured%20image&width=400&height=250&seq=blog-1&orientation=landscape" alt="Blog Post" class="w-full h-48 object-cover object-top">
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-2">December 15, 2024</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">The Future of Web Development in 2025</h3>
-                    <p class="text-gray-600 mb-4">
-                        Exploring the emerging trends and technologies that will shape web development in the coming year.
-                    </p>
-                    <a href="#" class="text-primary hover:text-blue-600 font-medium">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden border hover:shadow-xl transition-shadow">
-                <img src="https://readdy.ai/api/search-image?query=Mobile-first%20responsive%20design%20concept%20with%20multiple%20device%20screens%2C%20responsive%20web%20design%20showcase%2C%20modern%20UI%2FUX%20design%20process%2C%20web%20development%20blog%20illustration&width=400&height=250&seq=blog-2&orientation=landscape" alt="Blog Post" class="w-full h-48 object-cover object-top">
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-2">December 10, 2024</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Mastering Responsive Design Principles</h3>
-                    <p class="text-gray-600 mb-4">
-                        Essential techniques and best practices for creating websites that work perfectly on all devices.
-                    </p>
-                    <a href="#" class="text-primary hover:text-blue-600 font-medium">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="bg-white rounded-lg shadow-lg overflow-hidden border hover:shadow-xl transition-shadow">
-                <img src="https://readdy.ai/api/search-image?query=JavaScript%20framework%20comparison%20with%20code%20snippets%2C%20modern%20frontend%20development%20tools%2C%20programming%20language%20comparison%20chart%2C%20web%20development%20technology%20blog%20post&width=400&height=250&seq=blog-3&orientation=landscape" alt="Blog Post" class="w-full h-48 object-cover object-top">
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-2">December 5, 2024</div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">JavaScript Frameworks: A Complete Guide</h3>
-                    <p class="text-gray-600 mb-4">
-                        Comparing popular JavaScript frameworks and helping you choose the right one for your project.
-                    </p>
-                    <a href="#" class="text-primary hover:text-blue-600 font-medium">Read More →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -369,7 +356,7 @@
                     <div>
                         <textarea rows="6" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus-input-effect resize-none text-sm"></textarea>
                     </div>
-                    <button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                    <button type="submit" class="btn-gradient text-white px-8 py-3 !rounded-button whitespace-nowrap">
                         Send Message
                     </button>
                 </form>
@@ -402,7 +389,7 @@
                     </div>
                     <div>
                         <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
-                        <p class="text-gray-600">mahmudsazzad77@gmail.com</p>
+                        <p class="font-semibold">mahmudsazzad77@gmail.com</p>
                     </div>
                 </div>
                 
@@ -419,7 +406,7 @@
                             <i class="ri-linkedin-line"></i>
                         </a>
                         <a href="#" class="social-icon-hover w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-600 transition-colors">
-                            <i class="ri-instagram-line"></i>
+                            <i class="ri-instagram-line text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -428,6 +415,7 @@
     </div>
 </section>
 
+<!-- Footer -->
 <footer class="bg-secondary text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -449,6 +437,7 @@
         </div>
     </div>
     
+    <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-blue-600 transition-all opacity-0 invisible">
         <i class="ri-arrow-up-line"></i>
     </button>
@@ -550,6 +539,19 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = (currentIndex + 1) % roles.length;
         animatedText.textContent = roles[currentIndex];
     }, 3000);
+});
+</script>
+
+<script id="service-card-click-script">
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Toggle the 'active' class on click
+            this.classList.toggle('active');
+        });
+    });
 });
 </script>
 

@@ -46,14 +46,16 @@ body {
 }
 
 
-/* Existing Service Card Hover */
-.service-card:hover { 
+/* Service Card Click Effect */
+/* When the service-card has the 'active' class, apply the transform and transition */
+.service-card.active { 
     transform: translateY(-10px); 
     transition: all 0.3s ease; 
 }
 
-/* New Service Card Icon Rotation on Card Hover */
-.service-card:hover .service-icon-container i {
+/* Service Card Icon Rotation on Click */
+/* When the parent service-card has the 'active' class, rotate the icon */
+.service-card.active .service-icon-container i {
     transform: rotate(10deg);
     transition: transform 0.3s ease;
 }
@@ -106,7 +108,18 @@ body {
 
 /* New Input Field Focus Effect */
 .focus-input-effect:focus {
-    border-color: #3B82F6; /* Primary color */
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Soft shadow with primary color */
+    border-color: #EB671A; /* Your primary branding color */
+    box-shadow: 0 0 0 3px rgba(235, 103, 26, 0.3); /* Soft shadow with your primary branding color */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* New Gradient Button Style */
+.btn-gradient {
+    background-image: linear-gradient(to right, #EB671A, #E42C1F);
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background-image: linear-gradient(to right, #E42C1F, #EB671A); /* Reverse gradient on hover */
+    box-shadow: 0 4px 15px rgba(228, 44, 31, 0.4); /* Subtle shadow on hover */
 }
